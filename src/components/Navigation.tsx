@@ -42,7 +42,7 @@ const Navigation = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
       isScrolled 
         ? "bg-background/95 backdrop-blur-md border-b border-border card-shadow" 
-        : "bg-transparent"
+        : "bg-background/80 backdrop-blur-sm"
     }`}>
       <div className="container-padding">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -60,7 +60,7 @@ const Navigation = () => {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-primary transition-smooth font-medium"
+                className="text-foreground/90 hover:text-primary transition-smooth font-medium"
               >
                 {item.label}
               </button>
@@ -75,7 +75,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-muted-foreground hover:text-primary transition-smooth"
+            className="md:hidden p-2 text-foreground/90 hover:text-primary transition-smooth"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
