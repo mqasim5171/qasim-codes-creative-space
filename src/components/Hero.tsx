@@ -1,13 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import profilePhoto from "@/assets/qasim-profile.png";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
-  const handleDownloadCV = () => {
-    // This would link to the actual CV file
-    window.open("#", "_blank");
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -46,15 +42,6 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              variant="hero" 
-              size="hero"
-              onClick={handleDownloadCV}
-              className="group"
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download CV
-            </Button>
             <Button 
               variant="outline" 
               size="hero"
