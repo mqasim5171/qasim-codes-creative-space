@@ -178,11 +178,20 @@ All colors MUST be HSL.
 
   /* Hover Effects */
   .hover-lift {
-    @apply transition-smooth hover:-translate-y-1 hover:shadow-elevated;
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
   }
 
   .hover-scale {
-    @apply transition-smooth hover:scale-105;
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
   }
 
   /* Section Spacing */
