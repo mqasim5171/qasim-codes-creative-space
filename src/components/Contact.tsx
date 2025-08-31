@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mail, Linkedin, Github, MapPin, Phone } from "lucide-react";
+import { Mail, Linkedin, Github } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const Contact = () => {
   const contactMethods = [
@@ -85,14 +87,12 @@ const Contact = () => {
                 strategy, I'm here to help turn your ideas into reality.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="hero" 
-                  size="lg"
-                  onClick={() => window.open("mailto:mqasim5171@gmail.com", "_blank")}
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Start a Conversation
-                </Button>
+                <ContactForm>
+                  <Button variant="hero" size="lg">
+                    <Mail className="w-5 h-5 mr-2" />
+                    Start a Conversation
+                  </Button>
+                </ContactForm>
                 <Button 
                   variant="outline" 
                   size="lg"

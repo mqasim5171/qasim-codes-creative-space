@@ -1,6 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ContactForm from "./ContactForm";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,13 +65,11 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button 
-              variant="default" 
-              size="sm"
-              onClick={() => window.open("mailto:mqasim5171@gmail.com", "_blank")}
-            >
-              Get in Touch
-            </Button>
+            <ContactForm>
+              <Button variant="default" size="sm">
+                Get in Touch
+              </Button>
+            </ContactForm>
           </div>
 
           {/* Mobile Menu Button */}
@@ -95,17 +95,16 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button 
-                variant="default" 
-                size="sm" 
-                className="w-full mt-4"
-                onClick={() => {
-                  window.open("mailto:mqasim5171@gmail.com", "_blank");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Get in Touch
-              </Button>
+              <ContactForm>
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full mt-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Get in Touch
+                </Button>
+              </ContactForm>
             </div>
           </div>
         )}
