@@ -13,15 +13,14 @@ type Project = {
 
 const Projects = () => {
   const projects: Project[] = [
-    // ⭐ New client project (based on the provided live site)
+    // ⭐ Client portfolio (from your link)
     {
       title: "Usman Zafar — Portfolio Website",
       description:
-        "A clean, responsive personal portfolio that highlights projects and services with a modern hero, smooth section transitions, and conversion-focused CTAs. Built with a minimal aesthetic, consistent typography, and a well-structured layout for fast scanning.",
+        "A clean, responsive personal portfolio that highlights projects and services with a modern hero, smooth section transitions, and conversion-focused CTAs. Minimal aesthetic, consistent typography, and a well-structured layout for fast scanning.",
       technologies: ["React", "Tailwind CSS", "Responsive Layout", "Smooth Scrolling", "Accessible UI"],
       liveUrl: "https://stalwart-cat-f9d3c7.netlify.app/",
-      category: "Personal Portfolio",
-      // codeUrl: "" // add a repo URL when available to show the Code button
+      category: "Personal Portfolio"
     },
 
     {
@@ -100,10 +99,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card
               key={project.title + index}
-              className="group hover-lift card-shadow bg-card border-0 overflow-hidden"
+              className="group hover-lift card-shadow bg-card border-0 overflow-hidden flex flex-col h-full"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="p-6">
+              <div className="p-6 flex flex-col h-full">
+                {/* Header */}
                 <div className="mb-4">
                   <span className="inline-block px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full mb-3">
                     {project.category}
@@ -113,24 +113,28 @@ const Projects = () => {
                   </h3>
                 </div>
 
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                {/* Growable content to normalize heights */}
+                <div className="flex-grow">
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
 
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={`${project.title}-tech-${techIndex}`}
-                        className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, techIndex) => (
+                        <span
+                          key={`${project.title}-tech-${techIndex}`}
+                          className="px-2 py-1 text-xs bg-muted text-muted-foreground rounded"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex gap-3">
+                {/* Bottom-aligned actions */}
+                <div className="flex gap-3 mt-auto">
                   <Button
                     variant="default"
                     size="sm"
