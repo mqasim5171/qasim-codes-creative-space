@@ -4,6 +4,16 @@ import { ExternalLink, Github } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+
+      {
+      title: "Usman Zafar Portfolio Website",
+      description:
+        "A personal portfolio website showcasing projects and skills with a clean, minimal design — featuring smooth animations, responsive layout, a modern hero section, and clear navigation to highlight professional experience and works.",
+      technologies: ["React", "Tailwind CSS", "Animations", "Responsive Design", "Hero Section"],
+      liveUrl: "https://stalwart-cat-f9d3c7.netlify.app/",
+      category: "Personal Portfolio"
+       }
+
     {
       title: "Professional Cleaning Services",
       description: "A comprehensive cleaning services website for Sydney-based business featuring drone-powered solutions, pressure washing, window cleaning, and solar panel maintenance. Built with modern design and conversion-focused user experience.",
